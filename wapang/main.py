@@ -12,6 +12,9 @@ app.include_router(api_router, prefix="/api")
 
 app.add_middleware(DefaultSessionMiddleware)
 
+@app.get("/")
+async def root_test():
+    return {"message": "Hello World, I hope this works"}
 
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
