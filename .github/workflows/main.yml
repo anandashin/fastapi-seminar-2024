@@ -12,7 +12,7 @@ env:
   AWS_HOST: ${{ secrets.AWS_HOST }}
   AWS_SSH_KEY: ${{ secrets.AWS_SSH_KEY }}
   AWS_USER: ${{ secrets.AWS_USER }}
-  AWS_PORT: ${{ secrets.AWS_SSH_PORT }}
+  AWS_SSH_PORT: ${{ secrets.AWS_SSH_PORT }}
 
 
 jobs:
@@ -28,7 +28,7 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t ${{ env.DOCKER_REPO }}:latest .
+          docker build . -t ${{ env.DOCKER_REPO }}:latest
           docker push ${{ env.DOCKER_REPO }}:latest
 
   deploy:
