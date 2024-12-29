@@ -48,6 +48,6 @@ jobs:
           script: |
             cd wapang/
             sed -i 's|image:.*|image: '"${{ env.DOCKER_REPO }}:latest"'|' docker-compose.yaml
-            docker-compose down
-            docker-compose pull
-            docker-compose up -d
+            docker compose down
+            docker compose pull
+            docker compose up -d
