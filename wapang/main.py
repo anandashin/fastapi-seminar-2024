@@ -14,7 +14,7 @@ app.add_middleware(DefaultSessionMiddleware)
 
 @app.get("/")
 async def root_test():
-    return {"message": "Hello World, I hope this works.. this time I opened ssh port.. Also I add db.env in wapang directory which is in ec2"}
+    return {"message": "Hello World"}
 
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
