@@ -47,7 +47,6 @@ jobs:
           port: ${{ env.AWS_SSH_PORT }}
           script: |
             cd wapang/
-            sed -i 's|image:.*|image: '"${{ env.DOCKER_REPO }}:latest"'|' docker-compose.yaml
             sudo docker compose down
             sudo docker compose pull
             sudo docker compose up -d
