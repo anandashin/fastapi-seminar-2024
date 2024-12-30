@@ -10,6 +10,4 @@ COPY pyproject.toml poetry.lock ./
 RUN poetry install --no-dev
 
 COPY wapang ./wapang
-COPY .env.local ./
-
-CMD ["poetry", "run", "uvicorn", "wapang.main:app", "--host", "0.0.0.0", "--port", "8000"]
+COPY alembic.ini ./alembic.ini
