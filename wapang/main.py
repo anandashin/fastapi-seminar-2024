@@ -14,7 +14,7 @@ app.add_middleware(DefaultSessionMiddleware)
 
 @app.get("/")
 async def root_test():
-    return {"message": "Hello World"}
+    return {"message": "Hello World, Plz Plz Plz Work!!"}
 
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
