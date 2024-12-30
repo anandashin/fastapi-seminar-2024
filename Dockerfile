@@ -12,4 +12,4 @@ RUN poetry install --no-dev
 COPY wapang ./wapang
 COPY .env.prod ./
 
-CMD ["poetry", "run", "uvicorn", "wapang.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["sh", "-c", "alembic upgrade head && poetry run uvicorn wapang.main:app --host 0.0.0.0 --port 8000"]
