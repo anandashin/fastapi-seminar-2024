@@ -14,7 +14,7 @@ app.add_middleware(DefaultSessionMiddleware)
 
 @app.get("/")
 async def root_test():
-    return {"message": "Hello World, docker-compose.yaml contains .env.prod"}
+    return {"message": "Hello World"}
 
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
